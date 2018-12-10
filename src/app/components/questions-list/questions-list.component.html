@@ -1,0 +1,17 @@
+<mat-card>
+    <button mat-fab class="page-action" [routerLink]="['/questions/add']">
+      <mat-icon class="md-24">add</mat-icon>
+    </button>
+  
+    <mat-card-title>Questions</mat-card-title>
+    <mat-card-content>    
+  
+      <app-question [questions]="questions" 
+                    [showApproveButton]="showApproveButton"
+                    class="flex-container" 
+                    fxLayout="row wrap"
+                    fxLayoutAlign="center" fxLayoutAlign.xs="start">
+      </app-question>
+  
+    </mat-card-content>    
+  </mat-card>

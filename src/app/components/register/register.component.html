@@ -1,0 +1,29 @@
+<div class="form-container">
+  <div class="register-box">
+    <form role="form" [formGroup]="registerForm">
+      <div class="error" *ngIf="submitted && f.email.errors?.required">Email is required</div>
+      <div class="error" *ngIf="submitted && f.email.errors?.email">Not valid email</div>
+      <div class="input-group">
+        <span><i class="fa fa-envelope"></i></span>
+        <input type="email" formControlName="email" name="email" id="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="error" *ngIf="submitted && f.password.errors?.required">Password is required</div>
+      <div class="error" *ngIf="submitted && f.password.errors?.minlength">Password must contain at least 6 symbols</div>
+      <div class="input-group">
+        <span><i class="fa fa-key"></i></span>
+        <input type="password" formControlName="password" name="password" id="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="error" *ngIf="submitted && f.confirm.errors?.required">Password confirm is required</div>
+      <div class="error" *ngIf="submitted && f.confirm.errors?.minlength">Password must contain at least 6 symbols</div>
+      <div class="error" *ngIf="submitted">{{errorMessage}}</div>
+      <div class="input-group">
+          <span><i class="fa fa-key"></i></span>
+          <input type="password" formControlName="confirm" name="confirm" id="confirm" class="form-control" placeholder="Confirm Password">
+        </div>
+      <button (click)="register(registerForm)" type="submit" class="btn-register"><span>Register</span></button>
+      <div class="forgot">
+        <a href="/login">Return to login page</a>
+      </div>
+    </form>
+  </div>
+</div>

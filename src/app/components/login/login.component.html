@@ -1,0 +1,109 @@
+<!--
+<div class="form-container">
+  <div class="login-box">
+    <div class="social-login">
+      <button (click)="loginWithFacebook()" class="btn-social btn-facebook"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>Sign in with Facebook</button>
+      <button (click)="loginWithTwitter()" class="btn-social btn-twitter"><span><i class="fa fa-twitter" aria-hidden="true"></i></span>Sign in with Twitter</button>
+      <button (click)="loginWithGoogle()" href="#" class="btn-social btn-google"><span><i class="fa fa-google-plus" aria-hidden="true"></i></span>Sign in with Google+</button>
+      <div class="error">{{errorMessage}}</div>
+    </div>
+    <form role="form" [formGroup]="loginForm">
+      <div class="input-group">
+        <span><i class="fa fa-envelope"></i></span>
+        <input type="email" formControlName="email" name="email" id="email" class="form-control" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <span><i class="fa fa-key"></i></span>
+        <input type="password" formControlName="password" name="password" id="password" class="form-control" placeholder="Password">
+      </div>
+      <button (click)="login(loginForm.value)" type="submit" class="btn-social btn-login"><span>Login</span></button>
+      <div class="forgot">
+        <p>No account yet ?
+          <a href="/register">Create an account</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
+-->
+<div class="materialContainer">
+  <div class="box">
+     <div class="title">Login with</div>
+     <div class="social">
+        <a id="twitter_login" class="circle twitter" (click)="loginWithTwitter()">
+          <i class="fa fa-twitter fa-fw"></i>
+        </a>
+        <a id="google_login" class="circle google" (click)="loginWithGoogle()">
+          <i class="fa fa-google-plus fa-fw"></i>
+        </a>
+        <a id="facebook_login" class="circle facebook" (click)="loginWithFacebook()">
+          <i class="fa fa-facebook fa-fw"></i>
+        </a>
+     </div>
+    
+     <div class="division">
+        <div class="line l"></div>
+        <span>or</span>
+        <div class="line r"></div>
+     </div>
+      
+      <form [formGroup]="signInForm" (ngSubmit)="signInWithEmail()" novalidate> 
+       <div class="input">
+          <label for="name">Email</label>
+          <input type="text" name="email" id="email" formControlName="signInEmail">
+          <span class="spin"></span>
+        </div>
+        <p *ngIf="signInForm.controls.signInEmail.errors" style="font-size: 11px;">Not valid email</p>
+
+        <div class="input">
+          <label for="pass">Password</label>
+          <input type="password" name="pass" id="pass" formControlName="signInPassword">
+          <span class="spin"></span>
+        </div>
+        <p *ngIf="signInForm.controls.signInPassword.errors" style="font-size: 11px;">Not valid password</p>
+        <div class="button login">
+          <button type="submit"><span>GO</span> <i class="fa fa-check"></i></button>
+        </div>
+      </form>
+      <a href="" class="pass-forgot">Forgot your password?</a>
+  </div>
+
+  <div class="overbox">
+     <div class="material-button alt-2">
+       <span class="shape"></span>
+    </div>
+
+    <form [formGroup]="signUpForm" (ngSubmit)="signUpWithEmail()" novalidate>
+
+     <div class="title">Register</div>
+
+     <div class="input">
+        <label for="regname">Email</label>
+        <input type="regemail" name="regemail" id="regemail" formControlName="signUpEmail">
+        <span class="spin"></span>
+     </div>
+     <p *ngIf="signUpForm.controls.signUpEmail.errors" style="font-size: 11px; color: white;">Not valid email</p>
+
+     <div class="input">
+        <label for="regpass">Password</label>
+        <input type="password" name="regpass" id="regpass" formControlName="signUpPassword">
+        <span class="spin"></span>
+     </div>
+     <p *ngIf="signUpForm.controls.signUpPassword.errors" style="font-size: 11px; color: white;">Not valid password</p>
+
+     <div class="input">
+        <label for="reregpass">Repeat Password</label>
+        <input type="password" name="reregpass" id="reregpass" formControlName="signUpConfirm">
+        <span class="spin"></span>
+     </div>
+     <p *ngIf="signUpForm.controls.signUpConfirm.errors" style="font-size: 11px; color:white;">Not valid password</p>
+     <div class="error" *ngIf="answers.valid && questionForm.hasError('passwordsDontMatch')">
+        Passwords dont match
+      </div>
+     <div class="button">
+        <button type="submit"><span>NEXT</span></button>
+     </div>
+     </form>
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<mat-card>
+    <mat-card-title>Testing new approach</mat-card-title>
+    <mat-list>
+      <mat-list-item>
+        <span>Categories Count: {{categories?.length}}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Tag Count: {{tags?.length}}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span>Question Count: {{questions?.length}}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  
+  <mat-card>
+    <mat-card-title>Sample Questions</mat-card-title>
+    <mat-card-content>    
+  
+      <app-questions-list [questions]="sampleQuestions" 
+                    class="flex-container" 
+                    fxLayout="row wrap"
+                    fxLayoutAlign="center" fxLayoutAlign.xs="start">
+      </app-questions-list>
+  
+    </mat-card-content>    
+  </mat-card>

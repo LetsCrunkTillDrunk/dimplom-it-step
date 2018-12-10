@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-title>Questions</mat-card-title>
+  <mat-card-content>    
+
+  <mat-tab-group>
+    <mat-tab label="Published">
+      <app-questions-list [questions]="questions" 
+                    class="flex-container" 
+                    fxLayout="row wrap"
+                    fxLayoutAlign="center" fxLayoutAlign.xs="start">
+      </app-questions-list>
+    </mat-tab>
+    <mat-tab label="Unpublished">
+      <app-questions-list [questions]="unpublishedQuestions" 
+                    [showApproveButton]="true"
+                    (approveClicked)="approveQuestion($event)"
+                    class="flex-container" 
+                    fxLayout="row wrap"
+                    fxLayoutAlign="center" fxLayoutAlign.xs="start">
+      </app-questions-list>
+    </mat-tab>
+  </mat-tab-group>
+
+  </mat-card-content>    
+</mat-card>
